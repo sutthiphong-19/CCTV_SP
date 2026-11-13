@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#111a24" />
+    <meta name="description" content="Interactive CCTV troubleshooting handbook for camera, network, recording, and installation issues." />
+    <title>Troubleshooting Center — Inside the CCTV</title>
+    <script type="module" crossorigin src="/assets/troubleshooting-BdI2GA-s.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/OrbitControls-78t4fPbi.js">
+    <link rel="stylesheet" crossorigin href="/assets/OrbitControls-DIT51TYS.css">
+    <link rel="stylesheet" crossorigin href="/assets/troubleshooting-DT1dX0mL.css">
+  </head>
+  <body>
+    <div class="support-app">
+      <header class="support-header">
+        <a class="support-brand" href="./index.html" aria-label="Back to Inside the CCTV">
+          <span class="support-brand-mark">04</span>
+          <span><b data-i18n="brandName">FIELD NOTES</b><small data-i18n="brandSubtitle">TECHNICAL SUPPORT / 14</small></span>
+        </a>
+        <nav class="support-nav" aria-label="Troubleshooting sections">
+          <a href="#dashboard" data-i18n="navDashboard">DASHBOARD</a><a href="#workflow" data-i18n="navDiagnosis">DIAGNOSIS</a><a href="#network-lab" data-i18n="navNetwork">NETWORK LAB</a><a href="#tool-lab" data-i18n="navTools">TOOL LAB</a><a href="#knowledge" data-i18n="navKnowledge">KNOWLEDGE BASE</a>
+        </nav>
+        <label class="language-switch support-language" aria-label="Select language"><span>文</span><select id="language-select" aria-label="Select language"><option value="th">ไทย</option><option value="en">English</option></select></label>
+        <a class="back-link" href="./index.html" data-i18n="backWorkshop">← WORKSHOP</a>
+      </header>
+
+      <main>
+        <section class="support-hero">
+          <div class="hero-copy">
+            <div class="support-eyebrow"><span></span> <span data-i18n="heroEyebrow">TECHNICIAN'S DIGITAL HANDBOOK</span> <b data-i18n="guideNumber">FIELD GUIDE · 014</b></div>
+            <h1 data-i18n="heroHeading">TROUBLESHOOTING<br /><em>CENTER</em></h1>
+            <p data-i18n="heroDescription">A practical, step-by-step guide to diagnosing common CCTV faults.<br />Start with the symptom. Follow the evidence. Work safely.</p>
+            <a class="hero-cta" href="#dashboard"><span data-i18n="browseProblems">BROWSE PROBLEMS</span> <span>↓</span></a>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="art-crosshair"></div><div class="art-camera"><i></i><b></b><span></span><small></small></div>
+            <div class="art-coordinate">CAM 04 / DIAGNOSTIC MODE<br />IP · PoE · VIDEO · STORAGE</div>
+            <div class="art-scan"></div>
+          </div>
+          <div class="hero-status"><span class="status-pulse"></span> <span data-i18n="guideReady">FIELD GUIDE READY</span> <i>·</i> <b>29</b> <span data-i18n="commonFaults">COMMON FAULTS</span></div>
+        </section>
+
+        <section class="dashboard-section page-section" id="dashboard">
+          <div class="section-heading">
+            <div><div class="support-eyebrow"><span></span> <span data-i18n="symptomIndex">SYMPTOM INDEX / 01</span></div><h2 data-i18n="dashboardHeading">What are you <em>seeing?</em></h2></div>
+            <div class="problem-count"><b id="visible-count">29</b><span data-i18n="diagnosticPaths">DIAGNOSTIC<br />PATHS</span></div>
+          </div>
+          <div class="category-tabs" id="category-tabs" role="tablist" aria-label="Problem categories"></div>
+          <div class="problem-grid" id="problem-grid"></div>
+        </section>
+
+        <section class="workflow-section page-section" id="workflow">
+          <div class="section-heading">
+            <div><div class="support-eyebrow"><span></span> <span data-i18n="guidedDiagnosis">GUIDED DIAGNOSIS / 02</span></div><h2 data-i18n="workflowHeading">Camera has <em>no video.</em></h2></div>
+            <p class="section-aside" data-i18n="workflowAside">Follow the signal from the camera<br />to the recorder—one check at a time.</p>
+          </div>
+          <div class="workflow-card">
+            <div class="workflow-side">
+              <span class="workflow-figure" data-i18n="figureA">FIG. A</span>
+              <div class="signal-route"><i>CAM</i><b></b><i>NVR</i><b></b><i>MONITOR</i></div>
+              <h3 id="flow-title">Start with the camera.</h3>
+              <p id="flow-description">Check the camera's power indicator or confirm a link light at the PoE switch.</p>
+              <div class="flow-progress"><span id="flow-progress-bar"></span></div>
+              <div class="flow-step-count" id="flow-step-count">STEP 01 / 06</div>
+              <div class="flow-actions" id="flow-actions"></div>
+              <button class="flow-reset" id="flow-reset"><span>↺</span> <span data-i18n="restartDiagnosis">RESTART DIAGNOSIS</span></button>
+            </div>
+            <div class="flow-map" id="flow-map" aria-live="polite"></div>
+          </div>
+        </section>
+
+        <section class="network-section page-section" id="network-lab">
+          <div class="section-heading">
+            <div><div class="support-eyebrow"><span></span> <span data-i18n="networkCommands">NETWORK COMMANDS / 03</span></div><h2 data-i18n="networkHeading">Read the <em>network.</em></h2></div>
+            <p class="section-aside" data-i18n="networkAside">A safe, simulated command-line lab.<br />No commands are run on your device.</p>
+          </div>
+          <div class="network-lab">
+            <div class="command-list" id="command-list" role="tablist" aria-label="Network commands"></div>
+            <div class="command-console">
+              <div class="console-title"><span><i></i><i></i><i></i></span> <span data-i18n="consoleTitle">SIMULATED WINDOWS COMMAND PROMPT</span> <b data-i18n="educationalOnly">EDUCATIONAL ONLY</b></div>
+              <div class="command-description"><h3 id="command-name">ping</h3><p id="command-about"></p></div>
+              <label class="sim-input-label" for="sim-ip" data-i18n="simAddress">SIMULATED CAMERA / NVR ADDRESS</label>
+              <div class="sim-input-row"><span>&gt;</span><input id="sim-ip" value="192.168.1.50" inputmode="decimal" autocomplete="off" aria-label="Simulated IP address" data-i18n-aria="simIpAria" /><button id="run-command"><span data-i18n="runSimulation">RUN SIMULATION</span> <span>↗</span></button></div>
+              <pre class="console-output" id="console-output" aria-live="polite"></pre>
+              <div class="simulation-note"><span>i</span> <span data-i18n="simulationNote">SIMULATION ONLY — no network traffic is generated and no real device is contacted.</span></div>
+              <div class="command-explainer"><div><b data-i18n="whatItTells">WHAT IT TELLS YOU</b><p id="command-meaning"></p></div><div><b data-i18n="commonClue">COMMON CLUE</b><p id="command-error"></p></div></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="tool-section page-section" id="tool-lab">
+          <div class="section-heading">
+            <div><div class="support-eyebrow"><span></span> <span data-i18n="benchEquipment">BENCH EQUIPMENT / 04</span></div><h2 data-i18n="toolsHeading">Know your <em>tools.</em></h2></div>
+            <p class="section-aside" data-i18n="toolsAside">Select a tool to see a 3D illustration<br />and a safe, basic test procedure.</p>
+          </div>
+          <div class="tool-lab">
+            <div class="tool-stage">
+              <div class="tool-stage-label"><span><span data-i18n="benchLabel">BENCH /</span> <b id="tool-index">01</b></span><span><span data-i18n="interactiveModel">INTERACTIVE MODEL</span> <i></i></span></div>
+              <div id="tool-canvas" aria-label="Interactive 3D technician tool illustration" data-i18n-aria="toolCanvasAria"></div>
+              <div class="tool-stage-base"></div>
+              <div class="tool-caption"><span id="tool-caption-name">DIGITAL MULTIMETER</span><small data-i18n="toolOrbit">DRAG TO ORBIT · SCROLL TO ZOOM</small></div>
+            </div>
+            <div class="tool-details">
+              <div class="tool-picker" id="tool-picker"></div>
+              <article class="tool-info-card">
+                <div class="tool-category-tag"><span data-i18n="technicianEquipment">TECHNICIAN EQUIPMENT</span><span id="tool-category">ELECTRICAL</span></div>
+                <h3 id="tool-name">Digital Multimeter</h3>
+                <p id="tool-purpose"></p>
+                <div class="tool-steps"><b data-i18n="basicUse">BASIC USE</b><ol id="tool-steps"></ol></div>
+                <div class="tool-learn"><span data-i18n="readResult">READ THE RESULT</span><p id="tool-result"></p></div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="cases-section page-section" id="case-studies">
+          <div class="section-heading">
+            <div><div class="support-eyebrow"><span></span> <span data-i18n="casebook">BENCH CASEBOOK / 05</span></div><h2 data-i18n="casesHeading">Five faults. <em>One method.</em></h2></div>
+            <p class="section-aside" data-i18n="casesAside">Realistic scenarios: symptoms, likely causes,<br />and a sensible first response.</p>
+          </div>
+          <div class="case-grid" id="case-grid"></div>
+        </section>
+
+        <section class="knowledge-section page-section" id="knowledge">
+          <div class="section-heading">
+            <div><div class="support-eyebrow"><span></span> <span data-i18n="searchReference">SEARCHABLE REFERENCE / 06</span></div><h2 data-i18n="knowledgeHeading">Knowledge, <em>on call.</em></h2></div>
+            <p class="section-aside" data-i18n="knowledgeAside">Search 29 troubleshooting paths and filter<br />by the experience level you need.</p>
+          </div>
+          <div class="knowledge-tools">
+            <label class="knowledge-search"><span>⌕</span><input id="knowledge-search" placeholder="Search symptoms, causes, or solutions…" data-i18n-placeholder="searchPlaceholder" /><kbd data-i18n="topicsCount">29 TOPICS</kbd></label>
+            <div class="difficulty-filters" id="difficulty-filters" aria-label="Filter by difficulty"></div>
+          </div>
+          <div class="knowledge-list" id="knowledge-list"></div>
+          <div class="empty-state hidden" id="empty-state" data-i18n="noResults">No matching field notes. Try another symptom or difficulty.</div>
+        </section>
+
+        <section class="safety-section page-section" id="safety">
+          <div class="safety-icon">!</div>
+          <div class="safety-main"><div class="support-eyebrow" data-i18n="safetyEyebrow">SAFETY FIRST / BEFORE YOU BEGIN</div><h2 data-i18n="safetyHeading">Protect yourself.<br /><em>Then troubleshoot.</em></h2></div>
+          <ul class="safety-list">
+            <li data-i18n="safety1">Disconnect power before opening equipment or handling internal electrical components.</li>
+            <li data-i18n="safety2">Use appropriately rated electrical test equipment and follow its instructions.</li>
+            <li data-i18n="safety3">Never work on exposed live circuits; refer hazardous electrical work to a qualified technician.</li>
+            <li data-i18n="safety4">Follow the manufacturer's installation, maintenance, and warranty guidance.</li>
+          </ul>
+        </section>
+      </main>
+
+      <footer class="support-footer"><a href="./index.html" data-i18n="footerWorkshop">← INSIDE THE CCTV WORKSHOP</a><span data-i18n="footerGuide">FIELD NOTES / TECHNICAL SUPPORT <b>·</b> GUIDE 014</span><a href="#dashboard" data-i18n="backToTop">BACK TO TOP ↑</a></footer>
+
+      <div class="detail-overlay" id="detail-overlay" aria-hidden="true">
+        <button class="overlay-scrim" data-close-detail aria-label="Close diagnosis details" data-i18n-aria="closeDiagnosis"></button>
+        <aside class="detail-drawer" role="dialog" aria-modal="true" aria-labelledby="detail-title">
+          <button class="detail-close" data-close-detail aria-label="Close" data-i18n-aria="close"></button>
+          <div class="detail-heading"><span class="detail-number" id="detail-number">01</span><div><div class="support-eyebrow" id="detail-category"></div><h2 id="detail-title"></h2><p id="detail-symptom"></p></div></div>
+          <div class="detail-meta"><span id="detail-level"></span><span id="detail-time"></span></div>
+          <div class="detail-content" id="detail-content"></div>
+          <a class="drawer-workflow-link" href="#workflow" data-close-detail><span data-i18n="openWorkflow">OPEN GUIDED DIAGNOSIS</span> <span>↗</span></a>
+        </aside>
+      </div>
+      <div class="support-toast" id="support-toast" role="status"></div>
+    </div>
+  </body>
+</html>

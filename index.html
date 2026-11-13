@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#201a15" />
+    <meta name="description" content="Explore the anatomy of surveillance technology in an interactive 3D workshop." />
+    <title>Inside the CCTV — Workshop No. 04</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Inside the CCTV home">
+          <span class="brand-mark">04</span>
+          <span class="brand-copy"><b>FIELD NOTES</b><small>OPTICS &amp; OBSERVATION</small></span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <button class="nav-link active" data-view="overview" data-i18n="navOverview">Overview</button>
+          <button class="nav-link" data-view="components" data-i18n="navComponents">Components</button>
+          <button class="nav-link" data-view="system" data-i18n="navSystem">System</button>
+          <button class="nav-link" data-view="about" data-i18n="navAbout">About</button>
+        </nav>
+        <a class="support-link" href="./troubleshooting.html"><span data-i18n="supportLink">SUPPORT</span> <span>↗</span></a>
+        <label class="language-switch" aria-label="Select language"><span>文</span><select id="language-select" aria-label="Select language"><option value="th">ไทย</option><option value="en">English</option></select></label>
+        <div class="top-meta"><span class="live-dot"></span><span data-i18n="objectStudy">OBJECT STUDY <b>001—026</b></span></div>
+      </header>
+
+      <main class="stage">
+        <div id="canvas-root" aria-label="Interactive 3D CCTV camera workshop"></div>
+        <div class="canvas-vignette"></div>
+        <div class="sun-stamp"><span>PM</span><b>04:26</b><i data-i18n="goldenHour">GOLDEN HOUR</i></div>
+
+        <section class="intro" id="intro">
+          <div class="eyebrow"><span class="eyebrow-line"></span> <span data-i18n="fieldStudy">AN INTERACTIVE FIELD STUDY</span> <span class="eyebrow-num">№ 04 / 26</span></div>
+          <h1>INSIDE THE<br /><em>CCTV</em></h1>
+          <p data-i18n="introText">Explore the anatomy of<br />surveillance technology.</p>
+          <button class="primary-button" id="disassemble">
+            <span data-i18n="disassemble">Disassemble</span><span class="button-arrow">↗</span>
+          </button>
+          <div class="intro-note"><span class="note-icon">✳</span><span data-i18n="introNote">A closer look at what<br />keeps watch after dark.</span></div>
+        </section>
+
+        <section class="knolling-heading hidden" id="knolling-heading">
+          <div class="eyebrow"><span class="eyebrow-line"></span> <span data-i18n="inventory">COMPONENT INVENTORY</span></div>
+          <h2 data-i18n="inventoryHeading">Every part,<br /><em>in its place.</em></h2>
+        </section>
+
+        <div class="progress-wrap" id="progress-wrap" aria-live="polite">
+          <div class="progress-label"><span data-i18n="progressLabel">DISASSEMBLING</span><b id="progress-value">00%</b></div>
+          <div class="progress-track"><span id="progress-bar"></span></div>
+        </div>
+
+        <div class="hover-tag" id="hover-tag">
+          <span class="tag-index">PART 01</span><strong>Camera lens</strong><small>Precision optics</small>
+        </div>
+
+        <aside class="info-card" id="info-card" aria-live="polite">
+          <button class="card-close" id="close-card" aria-label="Close component details" data-i18n-aria="closeDetails">×</button>
+          <div class="card-kicker"><span class="live-dot"></span><span id="card-category">OPTICAL SYSTEM</span></div>
+          <h3 id="card-title">Camera lens</h3>
+          <p id="card-description">A multi-element optical assembly focuses incoming light onto the image sensor.</p>
+          <div class="card-spec"><span data-i18n="fieldNote">FIELD NOTE</span><span id="card-spec-value">f / 1.8 · 2.8 mm</span></div>
+          <div class="card-hint"><span data-i18n="clickExplore">CLICK TO EXPLORE</span> <span>↗</span></div>
+        </aside>
+
+        <section class="lens-panel hidden" id="lens-panel">
+          <div class="panel-top"><span class="eyebrow" data-i18n="opticalPath">OPTICAL PATH / 01</span><button class="panel-close" data-close-explore>×</button></div>
+          <h3 data-i18n="lensHeading">Light, <em>in focus.</em></h3>
+          <p data-i18n="lensDescription">Light passes through the protective glass and precision-ground elements. The aperture controls exposure; the IR-cut filter keeps color true by day. The sensor turns each photon into a pixel.</p>
+          <div class="optical-legend"><i></i> <span data-i18n="visibleLight">VISIBLE LIGHT</span> <i class="legend-ir"></i> <span data-i18n="infrared">INFRARED</span></div>
+        </section>
+
+        <section class="board-panel hidden" id="board-panel">
+          <div class="panel-top"><span class="eyebrow" data-i18n="signalPath">SIGNAL PATH / 02</span><button class="panel-close" data-close-explore>×</button></div>
+          <h3 data-i18n="boardHeading">From photon<br />to <em>packet.</em></h3>
+          <p data-i18n="boardDescription">The image processor encodes sensor data. PoE circuitry supplies power through the same cable that carries the video stream.</p>
+          <ul class="board-legend">
+            <li><i class="legend-sensor"></i><span data-i18n="cmosSensor">CMOS SENSOR</span><b data-i18n="lightSignal">Light → signal</b></li>
+            <li><i class="legend-chip"></i><span data-i18n="imageProcessor">IMAGE PROCESSOR</span><b data-i18n="signalVideo">Signal → video</b></li>
+            <li><i class="legend-network"></i><span data-i18n="networkPoe">NETWORK / PoE</span><b data-i18n="videoPower">Video + power</b></li>
+          </ul>
+        </section>
+
+        <section class="system-panel hidden" id="system-panel">
+          <div class="system-heading"><div><div class="eyebrow" data-i18n="connectedSystem">A CONNECTED SYSTEM / 03</div><h3 data-i18n="systemHeading">From lens to <em>archive.</em></h3></div><p data-i18n="systemDescription">Follow the signal<br />through the system.</p></div>
+          <div class="system-flow">
+            <div class="flow-node"><span class="flow-icon">◉</span><b data-i18n="camera">CAMERA</b><small data-i18n="capturesVideo">Captures video</small></div><span class="flow-line"></span>
+            <div class="flow-node"><span class="flow-icon">⌁</span><b data-i18n="switch">SWITCH</b><small data-i18n="routesData">Routes data</small></div><span class="flow-line"></span>
+            <div class="flow-node"><span class="flow-icon">▣</span><b>NVR</b><small data-i18n="recordsStream">Records stream</small></div><span class="flow-line"></span>
+            <div class="flow-node"><span class="flow-icon">▤</span><b>HDD</b><small data-i18n="storesFootage">Stores footage</small></div><span class="flow-line"></span>
+            <div class="flow-node"><span class="flow-icon">▱</span><b data-i18n="monitor">MONITOR</b><small data-i18n="displaysLiveView">Displays live view</small></div>
+          </div>
+        </section>
+
+        <section class="capture-card hidden" id="capture-card">
+          <button class="capture-close" id="close-capture" aria-label="Close snapshot" data-i18n-aria="closeSnapshot">×</button>
+          <div class="snapshot-image"><img id="snapshot-img" alt="Captured 3D workshop scene" /></div>
+          <div class="snapshot-caption"><b id="snapshot-caption">CAMERA / STUDY NO. 04</b><span data-i18n="snapshotDate">FIELD NOTES · 13 NOV 2026</span></div>
+          <a class="download-link" id="download-link" download="inside-the-cctv.png"><span data-i18n="downloadPrint">DOWNLOAD PRINT</span> <span>↓</span></a>
+        </section>
+
+        <div class="capture-flash" id="capture-flash"></div>
+
+        <div class="stage-caption"><span>FIG. 01</span><i></i><span data-i18n="bulletCaption">PROFESSIONAL BULLET CAMERA</span></div>
+        <div class="stage-coordinates">35° 41′ 22.2″ N<br />139° 41′ 30.1″ E</div>
+      </main>
+
+      <footer class="toolbar">
+        <div class="view-controls">
+          <button class="view-button active" id="model-bullet" title="Bullet camera model" data-i18n-title="bulletTitle"><span class="model-icon bullet-icon"></span><span data-i18n="bullet">BULLET</span></button>
+          <button class="view-button" id="model-dome" title="Dome camera model" data-i18n-title="domeTitle"><span class="model-icon dome-icon"></span><span data-i18n="dome">DOME</span></button>
+          <span class="toolbar-divider"></span>
+          <button class="text-button" id="reset-view"><span>↺</span> <span data-i18n="resetView">RESET VIEW</span></button>
+        </div>
+        <div class="toolbar-center" id="toolbar-center"><span class="orbit-icon">⟳</span> <span data-i18n="dragOrbit">DRAG TO ORBIT</span> <i></i> <span data-i18n="scrollZoom">SCROLL TO ZOOM</span></div>
+        <div class="action-controls">
+          <button class="text-button" id="assemble" disabled><span>↶</span> <span data-i18n="assemble">ASSEMBLE</span></button>
+          <button class="capture-button" id="capture"><span>◉</span> <span data-i18n="capture">CAPTURE</span></button>
+        </div>
+      </footer>
+      <div class="toast" id="toast" role="status"></div>
+      <div class="loading-screen" id="loading-screen"><div class="loading-mark">04</div><div class="loading-label" data-i18n="loading">PREPARING THE WORKSHOP</div><div class="loading-line"><span></span></div><small data-i18n="workshopSubtitle">OPTICS · ELECTRONICS · MECHANICS</small></div>
+      <noscript><div class="no-webgl">This interactive field study needs JavaScript enabled to bring the camera to life.</div></noscript>
+    </div>
+  </body>
+</html>
